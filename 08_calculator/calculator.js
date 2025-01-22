@@ -7,25 +7,27 @@ const subtract = function(a, b) {
 };
 
 const sum = function(arr) {
-	return arr.reduce((total, currentItem => {
-    return total + currentItem
-  }, 1))
+  const productOfAllNums = arr.reduce((total, currentItem) => {
+    return total + currentItem;
+  }, 0);
+  return productOfAllNums
 };
 
-const multiply = function(...arg) {
+const multiply = function(arg) {
   let arr = []
-  for(let i = 0; i < arguments; i++){
-    arr.push(arg)
+  for(let i = 0; i < arg.length; i++){
+    arr.push(arg[i])
   }
-  return arr.reduce((total, currentItem => {
+  const res = arr.reduce((total, currentItem) => {
     return total * currentItem
-  }, 1))
+  }, 1)
+  return res
 };
 
 const power = function(a, b) {
-  let res = 0
-	for(let i = 0; i < b + 1; i++){
-    res += a * a
+  let res = a
+	for(let i = 0; i < b-1; i++){
+    res *= a
   }
   return res
 };
@@ -35,9 +37,10 @@ const factorial = function(a) {
   for(let i = 1; i < a+1; i++){
     arr.push(i)
   }
-  arr.reduce((total, currentItem) => {
+  const res = arr.reduce((total, currentItem) => {
   return total * currentItem;
-}, 1);
+  }, 1);
+  return res
 };
 
 // Do not edit below this line
